@@ -18,7 +18,6 @@ def load_config():
     }
 
 # Função para conectar ao banco e executar consultas
-@st.cache_data(ttl=3600)  # Cache por 1 hora
 def fetch_data():
     try:
         config = load_config()
@@ -114,7 +113,7 @@ def main():
     st.set_page_config(page_title=config["PAGE_TITLE"], layout=config["LAYOUT"])
     st.title("📊 Dashboard - Fichas de Produção")
 
-    # Carregar dados
+    # Carregar dados diretamente sem cache (sempre atualizado)
     qtd_fichas, df = fetch_data()
 
     if df.empty and qtd_fichas is None:
