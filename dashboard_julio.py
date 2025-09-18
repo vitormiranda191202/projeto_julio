@@ -120,11 +120,8 @@ def main():
         return
 
     # Visão 1 - Geral
-    st.header("1️⃣ Visão Geral")
+    st.header("Eguh Vest")
     st.metric("Total de Fichas", qtd_fichas)
-
-    st.subheader("📋 Tabela Detalhada")
-    st.dataframe(df, use_container_width=True)
 
     st.subheader("📦 Fichas com seus Itens")
     for ficha_id, grupo in df.groupby("ficha_id"):
