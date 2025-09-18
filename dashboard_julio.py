@@ -125,7 +125,7 @@ def main():
 
     st.subheader("📦 Fichas com seus Itens")
     for ficha_id, grupo in df.groupby("ficha_id"):
-        st.markdown(f"###{grupo['produto'].iloc[0]} (Corte {grupo['corte'].iloc[0]})")
+        st.markdown(f"{grupo['produto'].iloc[0]} (Corte {grupo['corte'].iloc[0]})")
         st.write(f"📅 Data: {format_date(grupo['data'].iloc[0])} | 👕 Grade: {grupo['grade'].iloc[0]}")
         st.dataframe(grupo[["cor", "g1", "g2", "g3", "total_item"]], use_container_width=True)
 
