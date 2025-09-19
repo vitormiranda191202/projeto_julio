@@ -111,7 +111,7 @@ def plot_by_date(df):
 def main():
     config = load_config()
     st.set_page_config(page_title=config["PAGE_TITLE"], layout=config["LAYOUT"])
-    st.title("📊 Dashboard - Fichas de Produção")
+    st.title("📊 EguhVest - Fichas de Produção")
 
     # Carregar dados diretamente sem cache (sempre atualizado)
     qtd_fichas, df = fetch_data()
